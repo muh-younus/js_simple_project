@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practise-Tab</title>
+
+    <style>
+        *{
+
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+
+            background: gray;
+        }
+        .tab-button{
+
+            padding: 20px;
+            
+            margin: auto;
+            border: none;
+            width: 500px;
+
+
+        }
+
+        .tab-button button{
+
+            padding: 15px 30px;
+            background-color: teal;
+            color: white;
+            font-weight: 600;
+            border: none;
+            outline: none;
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border-radius: 3px;
+            transition: all 0.4s all;
+            
+        }
+
+        button:hover{
+
+            background-color: rgb(78, 107, 107);
+
+        }
+
+        button.show{
+
+            background-color: white;
+            color: black;
+        }
+
+        .content{
+
+           
+            line-height: 30px;
+            width: 500px;
+            margin: auto
+        }
+
+        .tab-content{
+
+            background-color: white;
+            margin-bottom: 10px;
+            padding: 20px;
+            display: none;
+
+
+        }
+
+        h2{
+
+            background-color: khaki
+        }
+    </style>
+
+</head>
+<body>
+  
+    <!-- Button-section -->
+    <div class="tab-button">
+
+        <button class="tab1" data-click="click-1"> Tab 01</button>
+ 
+        <button class="tab1" data-click="click-2">Tab 02</button>
+
+        <button class="tab1" data-click="click-3">Tab 03</button>
+
+    </div>
+
+    <!-- Content-Section -->
+
+    <div class="content">
+
+        <div id="click-1" class="tab-content">
+
+            <h2>Tab-01</h2>
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit necessitatibus ea voluptas excepturi dolores aliquam id suscipit dolorem sequi! Aperiam architecto voluptas aut nam magnam? Facilis quaerat qui ullam neque.</p>
+        </div>
+ 
+        <div id="click-2" class="tab-content">
+
+            <h2>Tab-02</h2>
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit necessitatibus ea voluptas excepturi dolores aliquam id suscipit dolorem sequi! Aperiam architecto voluptas aut nam magnam? Facilis quaerat qui ullam neque.</p>
+        </div>
+
+        <div id="click-3" class="tab-content">
+
+            <h2>Tab-03</h2>
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit necessitatibus ea voluptas excepturi dolores aliquam id suscipit dolorem sequi! Aperiam architecto voluptas aut nam magnam? Facilis quaerat qui ullam neque.</p>
+        </div>
+
+    </div>
+
+    <script>
+
+        var button = document.querySelectorAll(".tab1");
+
+        for(var i = 0; i < button.length; i++){
+
+            button[i].addEventListener("click", function() {
+
+                var tabName = this.dataset.click;
+                
+
+                var contentName = document.getElementById(tabName);
+
+                var allButton = document.querySelectorAll(".tab1");
+                
+                var allContent = document.querySelectorAll(".tab-content");
+               
+
+                
+
+                for(var j = 0; j < allButton.length; j++){
+
+                    allButton[j].classList.remove("show");
+                }
+
+                for(var k = 0; k < allContent.length; k++){
+
+                    allContent[k].style.display = "none";
+                }
+
+                contentName.style.display = "block"
+                this.classList.add("show");
+
+                
+
+
+            });
+
+            document.querySelector(".tab1").click();
+        }
+    </script>
+    
+</body>
+</html>

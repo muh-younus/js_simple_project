@@ -1,0 +1,46 @@
+*{
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.accordion-section{
+
+    width: 500px;
+    border: 1.5px solid aqua;
+    font-family: arial;
+}
+
+.accord-head{
+
+    color: #fff;
+    background-color: #dc2b2b;
+    padding: 10px;
+    font-weight: 600;
+    font-size: large;
+    transition: background 0.8s;
+
+}
+.accord-content.show{
+
+    display: block;
+}
+
+.accord-head:hover{
+
+    background-color: rgb(101, 17, 17);
+
+}
+
+.accord-content{
+
+    background-color: rgb(220, 202, 202);
+    padding: 15px;
+    display: none;
+}
+
+.accord-item{
+
+    margin-bottom: 10px;
+}

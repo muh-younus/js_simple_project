@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STICKY IN JAVASCRIPT</title>
+
+    <style>
+        *{
+
+            margin: 0;
+            padding: 0;
+        }
+        p{
+
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        #header{
+
+            padding: 10px 15px;
+            margin: 10px auto;
+            font-size: 30px;
+            font-weight: 900;
+            text-align: center;
+            background-color: gray;
+            width: 500px;
+            position: relative;
+        }
+
+        #header.sticky1{
+
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <section>
+
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam dignissimos quisquam excepturi pariatur suscipit sint sed, deleniti tempore, quae neque amet aut quibusdam ducimus animi temporibus cupiditate alias consequuntur? Repellat fugiat, aut, sit voluptatibus nihil excepturi nobis, minima explicabo nemo blanditiis facere ipsa dolore quae fugit natus! Deleniti aut accusamus reprehenderit repellendus dolores voluptatibus quod ipsam ut quae dicta aperiam totam porro blanditiis libero, animi sunt odit, nam autem! Expedita ratione quia dolorem repellat, nobis quidem assumenda minima fugiat facere, odio architecto atque. Qui laborum magnam a illum ipsum nulla pariatur nihil ad tempore, dignissimos enim est eligendi labore aliquam.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam modi fugit consequatur, voluptas tempore adipisci explicabo deserunt aut facere aliquam rerum molestias inventore ratione. Sit iste quaerat, corporis necessitatibus quae harum quis laudantium est autem nihil, accusamus totam sequi temporibus, quasi fugiat cumque nesciunt! Maxime illo pariatur modi quia itaque!
+        </p>
+
+        <div class="" id="header">
+            CONTENT 01
+        </div>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, cumque tempora. Doloremque totam vel quasi id vero laborum sapiente! Nostrum consectetur eligendi vitae illo pariatur? Sequi illum provident repudiandae dolor deleniti, architecto quibusdam! Assumenda, est? Quia fugit voluptatem explicabo cum aliquid beatae tempora ex error in animi quidem ratione fuga provident quaerat nostrum eaque est, delectus quos nisi aspernatur deleniti reprehenderit iste! Animi adipisci numquam cupiditate, ducimus praesentium corporis, ex unde qui impedit debitis dignissimos incidunt aperiam officia omnis sequi pariatur, quod ullam repudiandae iusto ea voluptatibus et in laborum assumenda! Asperiores aliquid temporibus eum quasi adipisci, sed laborum iusto unde doloremque in repudiandae eaque explicabo ea ducimus. Aliquid nisi, fuga quas vel iste fugit doloribus? Doloribus in eaque sunt veniam harum recusandae totam, repellat rem! Eius itaque distinctio perspiciatis expedita ea sed voluptatum nostrum, suscipit pariatur doloribus nulla veritatis maxime, voluptas tenetur at? Quam voluptate aliquid, est magni asperiores voluptatum? Earum asperiores, distinctio aperiam aspernatur minima enim ea id voluptas reiciendis blanditiis laboriosam quam optio ad possimus natus alias esse aliquam officiis. Voluptatibus quas harum excepturi, facere atque nisi commodi odit aspernatur officiis quo officia reprehenderit vitae veniam veritatis quos, incidunt dolorem! Voluptas laboriosam eum dolores rerum ea cum, beatae explicabo tempore natus voluptatibus accusantium commodi corrupti adipisci facilis dolorem sit consectetur nulla! Veritatis minima temporibus error, cumque dicta alias beatae possimus rem veniam! Labore sint obcaecati explicabo quo nisi? Fuga natus impedit eos aut, maxime quia sed atque corrupti numquam commodi dolore inventore beatae, sequi eum itaque quam ipsum amet minus tempore nesciunt a laborum. Tempore molestiae quisquam repudiandae dolor culpa totam harum natus perspiciatis itaque? Sint omnis ullam dolorem nostrum accusantium numquam odio, atque modi aut doloribus, necessitatibus nam? Repellat recusandae, accusantium harum laudantium molestias dicta? Totam nobis doloribus exercitationem officia? Ex, fugit nemo asperiores repudiandae a rem labore repellat velit et. Vero eum perferendis, pariatur ipsa recusandae ratione minima illum neque, optio ut quidem veniam fugit vitae a atque doloremque dicta nam! Distinctio quaerat magnam vel sunt! Aperiam impedit eum tempore velit, repellendus minus expedita soluta dicta quae animi, officia quam voluptate, harum itaque sint ex corrupti consectetur a amet non quibusdam. Facere error doloribus, ducimus qui suscipit velit aut corporis. Soluta perferendis ab hic fuga dolore, consequuntur nostrum sint, nihil, veritatis laborum laboriosam? Nihil similique consequatur voluptatum odio eius id unde facere, iusto in quibusdam quidem, quas cupiditate facilis nulla? Officia exercitationem cum veritatis amet alias tenetur quisquam neque nostrum corporis, voluptate harum voluptatum. Facilis non, dolor accusamus, expedita doloremque molestias harum, deserunt a officia blanditiis voluptas dignissimos modi quasi assumenda iusto exercitationem voluptatibus? Magnam explicabo eum error provident nostrum eos magni eius voluptates, atque veritatis architecto cumque laboriosam? Inventore sit exercitationem ex quaerat omnis, voluptates est libero veniam voluptas labore obcaecati enim laudantium nam laborum optio. Temporibus excepturi harum numquam sapiente quis! Obcaecati fugit id quaerat earum dicta sapiente asperiores quia eum quisquam atque, iste similique repellendus! Fuga, provident quasi ex quod perspiciatis minima, quisquam pariatur nostrum incidunt esse deserunt quae corrupti reprehenderit totam!</p>
+
+        <script>
+            let header = document.querySelector("#header");
+            let sticky = header.offsetTop;
+        
+            console.log(sticky); // To see the initial offset position of the header
+        
+            window.addEventListener('scroll', () => {
+                // Check if the page has scrolled past the header's position
+                if (window.pageYOffset > sticky) {
+                    header.classList.add("sticky1"); // Add sticky class when scrolled past
+                } else {
+                    header.classList.remove("sticky1"); // Remove sticky class when above the header
+                }
+            });
+        </script>
+        
+      
+    </section>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIDE-BAR</title>
+
+    <style>
+
+        *{
+
+            margin:0;
+            padding: 0; 
+            box-sizing: border-box;
+        }
+
+        nav{
+
+            background-color: gray;
+            padding: 10px;
+        }
+        
+        nav button{
+
+            padding: 10px 20px;
+            background-color: hotpink;
+            border: none;
+            border-radius: 3px;
+        }
+
+        .menu-list{
+
+            width: 200px;
+            background-color: rgb(182, 98, 152);
+            list-style: none;
+            text-decoration: none;
+            height: 100vh;
+            position: relative;
+        }
+
+        .menu-list li{
+
+            text-decoration: none;
+            list-style: none;
+            padding: 20px;
+            border-bottom: 1px solid black;;
+           
+           
+        }
+
+        li a{
+
+            text-decoration: none;
+            color: white;
+            left: 10px;
+        }
+
+        .menu-list.active{
+
+            animation: slide-in 0.3s ease-in-out;
+
+
+        }
+
+        .menu-list:not(.active){
+
+            animation: slide-out 0.3s ease-in-out;
+
+
+        }
+
+        @keyframes side-in {
+
+            0%{
+
+                transform: translateX(-100%);
+            }
+
+            100%{
+
+                transform: translateX(0%);
+            }
+        }
+
+        @keyframes side-out {
+
+            0%{
+
+                transform: translateX(0%);
+            }
+
+            100%{
+
+                transform: translateX(-100%);
+            }
+
+
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+
+        <button class="btn">&#9776;Menu</button>
+
+    </nav>
+
+    <div class="menu-list">
+
+        <ul>
+            <li>
+                <a href="#">Home</a>
+            
+            </li>
+
+            <li>
+                
+                <a href="#">About</a>
+            
+            </li>
+
+            <li>
+                <a href="#">Contact</a>
+            </li>
+
+            <li>
+                <a href="#">Email</a>
+            </li>
+
+            <li>
+                <a href="#">Product</a>
+            </li>
+            <li>
+                <a href="#">Payment</a>
+
+            </li>
+
+            <li>
+                <a href="#">Cart</a>
+            </li>
+
+            <li>
+                <a href="#">Delivery</a>
+            </li>
+
+            <li>
+                <a href="#">
+                    Cash/Online
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+    <script>
+
+        var button = document.getElementsByClassName(".btn");
+        var menuList = document.getElementsByClassName(".menu-list");
+
+        button.addEventListener("click", function() {
+
+            menuList.classList.toggle('active');
+        }); 
+        
+
+       
+    </script>
+    
+</body>
+</html>
